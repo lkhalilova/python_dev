@@ -18,16 +18,16 @@ while True:
         for name in all_names:
             print(name)
 
-    elif "show" in user_input:
+    elif "show" in user_input:  # format "show full name"
         name = split_input[1] + " " + split_input[2]
         print(phone_book.get(name.title()))
 
-    elif "add" in user_input:
+    elif "add" in user_input:  # format "add full name number"
         new_name = split_input[1].title() + " " + split_input[2].title()
         new_contact = [new_name, split_input[3]]
         phone_book.update({new_contact[0]: new_contact[1]})
 
-    elif "delete" in user_input:
+    elif "delete" in user_input:  # format "delete full name"
         key = split_input[1].title() + " " + split_input[2].title()
         del phone_book[key]
 

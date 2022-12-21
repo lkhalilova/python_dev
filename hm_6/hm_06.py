@@ -24,8 +24,11 @@ while True:
 
     elif "add" in user_input:  # format "add full name number"
         new_name = split_input[1].title() + " " + split_input[2].title()
-        new_contact = [new_name, split_input[3]]
-        phone_book.update({new_contact[0]: new_contact[1]})
+        if phone_book.get(new_name) is None:
+            new_contact = [new_name, split_input[3]]
+            phone_book.update({new_contact[0]: new_contact[1]})
+        else:
+            print("the contact already exists")
 
     elif "delete" in user_input:  # format "delete full name"
         key = split_input[1].title() + " " + split_input[2].title()

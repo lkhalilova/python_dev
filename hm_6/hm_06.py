@@ -32,7 +32,11 @@ while True:
 
     elif "delete" in user_input:  # format "delete full name"
         key = split_input[1].title() + " " + split_input[2].title()
-        del phone_book[key]
+        if phone_book.get(key) is not None:
+            del phone_book[key]
+        else:
+            print("the contact has not been found")
+
 
 
 

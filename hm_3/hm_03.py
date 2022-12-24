@@ -22,5 +22,5 @@ print(8 > i)   # True
 a = 2
 b = 5
 c = 6
-d = str(a ** ((a + b) + (c - b)))
+d = str(a) + str(b) + str(c)
 print(d)

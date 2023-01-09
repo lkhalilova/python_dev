@@ -11,9 +11,8 @@ def fib(n):
 
 
 fib_generator = fib(term)
-for item in fib_generator:
-    pass
-print(item)
+lst_generator = list(fib_generator)
+print(lst_generator[-1])
 
 # task_number_two
 
@@ -21,19 +20,25 @@ print(item)
 class FibIterator:
     def __init__(self, term_index):
         self.term_index = term_index
+        self.cur_fib = 0
+        self.next_fib = 1
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        a, b = 0, 1
-        for item in range(self.term_index):
-            a, b = b, a + b
-        return a
+        if self.term_index == 0:
+            raise StopIteration
+        self.term_index -= 1
+        next_fib = self.cur_fib + self.next_fib
+        self.cur_fib = self.next_fib
+        self.next_fib = next_fib
+        return self.cur_fib
 
 
 iter_fib = FibIterator(term)
-print(next(iter_fib))
+lst_iter_fib = list(iter_fib)
+print(lst_iter_fib[-1])
 
 # task_number_3
 

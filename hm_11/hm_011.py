@@ -15,6 +15,7 @@ def get_time_and_name(func):
 @get_time_and_name
 def factorial(num):
     print(math.factorial(num))
+    return 2
 
 
 print(factorial(8))

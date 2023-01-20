@@ -66,10 +66,11 @@ import math
 def get_time_and_name(func):
     def inner(*args, **kwargs):
         call_time = datetime.datetime.now()
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
         print(f"function {func} was called at {call_time}")
         with open("decorated_functions.txt", "a") as file:
             file.write(f"function {func} was called at {call_time}\n")
+        return result
     return inner
 
 

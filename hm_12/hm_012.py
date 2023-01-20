@@ -10,7 +10,7 @@ phone_book = {
 
 json_phone_book = json.dumps(phone_book, indent=0)
 
-with open("json_phone_book", "x") as file:
+with open("json_phone_book.json", "x") as file:
     file.write(json_phone_book)
 
 count = 3
@@ -50,7 +50,7 @@ while count:
 
 new_json_phone_book = json.dumps(phone_book, indent=0)
 
-with open("json_phone_book", "w") as file:
+with open("json_phone_book.json", "w") as file:
     file.write(new_json_phone_book)
 
 with open("json_phone_book") as file:

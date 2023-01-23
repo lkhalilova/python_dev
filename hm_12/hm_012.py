@@ -1,21 +1,17 @@
 # task_num_1
 import json
-phone_book = {
-    "Alina Kravchenko": "0664686501",
-    "Egor Miroshnichenko": "0995678456",
-    "Ruslan Volikov": "0987656342",
-    "Nastya Lehenka": "0995676456"
 
-}
+try:
+    with open("json_phone_book.json") as file:
+        read_file = file.read()
+        phone_book = json.loads(read_file)
+except FileNotFoundError:
+    with open("json_phone_book.json", "x") as file:
+        phone_book = {}
+        json_d = json.dumps(phone_book)
+        file.write(json_d)
 
-json_phone_book = json.dumps(phone_book, indent=0)
-
-with open("json_phone_book.json", "x") as file:
-    file.write(json_phone_book)
-
-count = 3
-
-while count:
+while True:
     user_input = input("Enter a command here: ")
     split_input = user_input.split()
 
@@ -37,6 +33,8 @@ while count:
         if phone_book.get(new_name) is None:
             new_contact = [new_name, split_input[3]]
             phone_book.update({new_contact[0]: new_contact[1]})
+            with open("json_phone_book.json", "w") as file:
+                json.dump(phone_book, file)
         else:
             print("the contact already exists")
 
@@ -44,22 +42,16 @@ while count:
         key = split_input[1].title() + " " + split_input[2].title()
         if phone_book.get(key) is not None:
             del phone_book[key]
+            with open("json_phone_book.json", "w") as file:
+                json.dump(phone_book, file)
         else:
             print("the contact has not been found")
-    count -= 1
 
-new_json_phone_book = json.dumps(phone_book, indent=0)
-
-with open("json_phone_book.json", "w") as file:
-    file.write(new_json_phone_book)
-
-with open("json_phone_book") as file:
-    read_file = file.read()
-    print(type(read_file))
-    print(json.loads(read_file))
 
 # task_num_2
+
 import datetime
+
 import math
 
 

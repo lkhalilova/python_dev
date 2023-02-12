@@ -32,7 +32,7 @@ class TelegramBot(Bot):
 
 class MyStr(str):
     def __str__(self, *args, **kwargs):
-        return str(self.upper())
+        return self.upper()
 
 # task_num_4
 
@@ -87,6 +87,7 @@ telegram_bot = type(
     "TelegramBotClass",
     (bot,),
     {
+        "__init__": init_function,
         "set_url": set_url_function,
         "set_chat_id": set_chat_id_function,
         "send_message": send_message_function

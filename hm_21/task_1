@@ -1,0 +1,7 @@
+import sqlite3
+
+query = ("SELECT * FROM users WHERE age > 30")
+
+con = sqlite3.connect("63eb4df36ed6c423891686.sqlite")
+cursor = con.cursor()
+cursor.execute(query)

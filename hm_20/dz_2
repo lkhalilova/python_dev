@@ -1,0 +1,9 @@
+data = [
+    ("Lolita", "Khalilova", 25),
+    ("Boris", "JonsonUK", 54),
+    ("Joe", "Biden", 80),
+    ("Volodimir", "Zelenskiy", 45),
+    ("Valerii", "Zaluzhniy", 55),
+]
+
+cursor.executemany("INSERT INTO users (first_name, last_name, age) values (?, ?, ?)", data)

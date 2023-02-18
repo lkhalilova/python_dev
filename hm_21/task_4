@@ -1,6 +1,6 @@
 import sqlite3
 
-query = ("SELECT age, COUNT(*) AS users_amount FROM users GROUP BY age ORDER BY users_amount desc")
+query = ("SELECT age, COUNT(*) AS users_amount FROM users GROUP BY age ORDER BY users_amount desc, age")
 
 con = sqlite3.connect("63eb4df36ed6c423891686.sqlite")
 cursor = con.cursor()

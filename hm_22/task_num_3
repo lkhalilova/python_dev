@@ -1,0 +1,12 @@
+import sqlite3
+
+db = sqlite3.connect("db")
+cursor = db.cursor()
+
+query = ("SELECT users.id, users.first_name, users.last_name, books.title"
+         "FROM books"
+         "JOIN purchase on books.id = purchase.book_id"
+         "JOIN users on users.id = purchase.user_id"
+         "ORDER BY users.id")
+
+cursor.execute(query)

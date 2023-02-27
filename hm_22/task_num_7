@@ -1,0 +1,11 @@
+import sqlite3
+
+db = sqlite3.connect("db")
+cursor = db.cursor()
+
+query = ("SELECT books.author, SUM(books.price), COUNT(purchase.book_id)"
+         "FROM books"
+         "JOIN purchase on books.id = purchase.book_id"
+         "GROUP BY books.author")
+
+cursor.execute(query)

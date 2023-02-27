@@ -1,0 +1,10 @@
+import sqlite3
+
+db = sqlite3.connect("db")
+cursor = db.cursor()
+
+query = ("SELECT purchase.id, purchase.date, users.first_name, users.last_name"
+         "FROM users"
+         "JOIN purchase on users.id = purchase.user_id")
+
+cursor.execute(query)

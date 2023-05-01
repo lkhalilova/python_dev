@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books_list</title>
+</head>
+<body>
+    <div>
+        {% for book in object_list %}
+            {{book.id}} {{book.title}} {{book.author}} {{book.year}} {{book.price}} hrivnas <br>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

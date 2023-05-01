@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 
 class User(models.Model):
@@ -9,3 +10,10 @@ class User(models.Model):
 
     def __str__(self):
         return f"{self.id}: {self.first_name} {self.last_name} {self.age}"
+
+
+class UserForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ("id", "first_name", "last_name", "age")
+

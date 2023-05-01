@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import all_users_json
+from .views import ListUsers, GetUserId, UserCreate
 
 
 urlpatterns = [
-    path("", all_users_json, name="all_users_json"),
+    path("", ListUsers.as_view(), name="users-list"),
+    path("detail/<int:id>", GetUserId.as_view(), name="user-id"),
+    path("create", UserCreate.as_view(), name="user-create")
 ]

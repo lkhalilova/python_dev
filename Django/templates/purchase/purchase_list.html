@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books_list</title>
+</head>
+<body>
+    <div>
+        {% for purchase in object_list %}
+            purchase id: {{purchase.id}}, bought by {{purchase.user.first_name}} {{purchase.user.last_name}}, book:
+            {{purchase.book.title}} {{purchase.book.author}} {{purchase.book.date}} <br>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

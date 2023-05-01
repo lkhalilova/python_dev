@@ -23,7 +23,7 @@ class PurchaseForm(ModelForm):
 
     class Meta:
         model = Purchase
-        fields = ("id", "user", "book", "date")
+        fields = ("user", "book", "date")
 
 
 

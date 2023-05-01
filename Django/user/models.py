@@ -15,5 +15,5 @@ class User(models.Model):
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ("id", "first_name", "last_name", "age")
+        fields = ("first_name", "last_name", "age")
 

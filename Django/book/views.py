@@ -16,9 +16,7 @@ class ListBooks(ListView):
 
 
 class GetBookId(DetailView):
-    def get(self, request, *args, **kwargs):
-        obj = Book.objects.get(id=kwargs.get("id"))
-        return render(request, "book/book_detail.html", {"object": obj})
+    model = Book
 
 
 class BookCreate(CreateView):

@@ -16,9 +16,7 @@ class ListUsers(ListView):
 
 
 class GetUserId(DetailView):
-    def get(self, request, *args, **kwargs):
-        obj = User.objects.get(id=kwargs.get("id"))
-        return render(request, "user/user_detail.html", {"object": obj})
+    model = User
 
 
 class UserCreate(CreateView):

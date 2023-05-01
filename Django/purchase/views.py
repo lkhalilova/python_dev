@@ -15,9 +15,7 @@ class ListPurchases(ListView):
 
 
 class GetPurchaseId(DetailView):
-    def get(self, request, *args, **kwargs):
-        obj = Purchase.objects.get(id=kwargs.get("id"))
-        return render(request, "purchase/purchase_detail.html", {"object": obj})
+    model = Purchase
 
 
 class PurchaseCreate(CreateView):

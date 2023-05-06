@@ -5,12 +5,8 @@ from book.serializes import BookSerializer
 
 
 class PurchaseSerializer(serializers.ModelSerializer):
-    id = serializers.SerializerMethodField(method_name="id_method")
-    users = UserSerializer(many=True)
-    book = BookSerializer(many=True)
-
-    def id_method(self, obj):
-        return f"Purchase's id: {obj.id}"
+    user = UserSerializer
+    book = BookSerializer
 
     class Meta:
         model = Purchase

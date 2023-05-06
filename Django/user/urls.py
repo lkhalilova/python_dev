@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import hello
+from .views import all_users_json
 
 
 urlpatterns = [
-    path("hello", hello, name="user")
+    path("", all_users_json, name="all_users_json"),
 ]

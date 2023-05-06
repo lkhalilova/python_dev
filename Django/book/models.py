@@ -1,5 +1,5 @@
 from django.db import models
-from user.models import User
+from django.forms import ModelForm
 
 
 class Book(models.Model):
@@ -14,4 +14,10 @@ class Book(models.Model):
 
     class Meta:
         unique_together = ("title", "author")
+
+
+class BookForm(ModelForm):
+    class Meta:
+        model = Book
+        fields = ("title", "author", "year", "price")
 

@@ -5,8 +5,8 @@ from book.serializes import BookSerializer
 
 
 class PurchaseSerializer(serializers.ModelSerializer):
-    user = UserSerializer
-    book = BookSerializer
+    user = UserSerializer()
+    book = BookSerializer()
 
     class Meta:
         model = Purchase

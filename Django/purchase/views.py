@@ -7,7 +7,7 @@ from .models import Purchase, PurchaseForm
 from django.views.generic import ListView, CreateView, DetailView
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from .serializes import PurchaseSerializer
+from .serializers import PurchaseSerializer
 
 
 # def all_purchases_json(request):

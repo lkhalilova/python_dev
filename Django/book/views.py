@@ -6,7 +6,7 @@ from django.views.generic import ListView, CreateView, DetailView
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from rest_framework.viewsets import ModelViewSet
-from .serializes import BookSerializer
+from .serializers import BookSerializer
 import django_filters
 
 

@@ -1,6 +1,4 @@
 from rest_framework import serializers
-
-from purchase.serializes import PurchaseSerializer
 from .models import User
 
 

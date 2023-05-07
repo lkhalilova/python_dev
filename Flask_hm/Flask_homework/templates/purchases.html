@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>purchases</title>
+</head>
+<body>
+    <div>
+        <ul>
+            {% for p in purchases %}
+                <li>
+                  {{p.id}}. user: {{p.user_id}}: {{p.user.first_name}}, book: {{p.book_id}},
+                  {{p.book.title}} {{p.book.author}} {{date}}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="http://192.168.1.6:5000/logout"><button>logout</button></a>
+
+</body>
+</html>

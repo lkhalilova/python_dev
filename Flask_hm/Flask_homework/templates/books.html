@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>books</title>
+</head>
+<body>
+    <div>
+        <ul>
+            {% for book in books %}
+                <li>{{book.id}}: {{book.title}}: {book.author}}: {{book.price}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="http://192.168.1.6:5000/logout"><button>logout</button></a>
+
+</body>
+</html>

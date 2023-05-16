@@ -10,4 +10,3 @@ COPY . .
 
 EXPOSE 4200
 
-CMD python manage.py runserver 0.0.0.0:4200

@@ -1,0 +1,42 @@
+version: “3.8”
+
+services:
+  flask_app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: gunicorn --bind 0.0.0.0:4200
+    restart: always
+    ports:
+      - "4200:4200"
+    environment:
+    - DB_TYPE=postgresql
+    - DB_USER=flask-bot
+    - DB_PASSWORD=bot1201
+    - DB_HOST=database
+    - DB_PORT=5432
+    - DB_NAME=bot-db
+    depends_on:
+    - database
+
+  database:
+    image: postgres:14-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+        - POSTGRES_USER=bot-user
+        - POSTGRES_PASSWORD=bot22
+        - POSTGRES_DB=bot-db
+    ports:
+        - "5432:5432"
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - flask_app
+
+
+volumes:
+  postgres_data:

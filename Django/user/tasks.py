@@ -11,10 +11,10 @@ def user_task():
 def purchase_count(user_id):
     queried_user = User.objects.get(id=user_id)
     purchases_amount = queried_user.purchases.count()
-    return f"This user has made {purchases_amount} purchases"
+    print(f"This user has made {purchases_amount} purchases")
 
 
 @shared_task
 def user_amount():
-    return f"Users amount: {User.objects.all.count()}"
+    print(f"Users amount: {User.objects.all.count()}")
 
